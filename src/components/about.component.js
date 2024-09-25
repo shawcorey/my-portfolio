@@ -1,5 +1,5 @@
 import React from 'react';
-import './About.css'; // Optional: Create a CSS file for styling.
+import './about.component.css'; // Optional: Create a CSS file for styling.
 
 const About = () => {
     return (
@@ -10,7 +10,7 @@ const About = () => {
                     Hello! I'm Corey, a passionate Full Stack Web Developer with experience in building web applications using modern technologies like Java, JavaScript, React.js, Python, Node.js, and more.
                 </p>
                 <p>
-                    I have 3 years of profressional experience working on projects that span across various domains. I specialize in frontend and backend development, and I'm committed to writing clean, efficient, and scalable code.
+                    I have 3 years of professional experience working on projects that span across various domains. I specialize in frontend and backend development, and I'm committed to writing clean, efficient, and scalable code.
                 </p>
                 <p>
                     Outside of coding, I enjoy fitness, being a Father, making Art, traveling and long list of other activities. My goal is to continue growing as a developer, learn new skills, and contribute to impactful projects.

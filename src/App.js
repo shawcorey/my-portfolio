@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import About from './components/About'; 
+import About from './components/about.component'; 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import Projects from './components/Projects';
-import Blog from './components/Blog';
-import Navbar from './components/Navbar'; // Optional navigation bar
+
+import Projects from './components/projects.component';
+import Blog from './components/blog.component';
+import Navbar from './components/navbar.component'; // Optional navigation bar
 
 
 
@@ -21,7 +21,7 @@ function App() {
 
                 {/* Define Routes */}
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<About />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/projects" element={<Projects />} />
                     <Route path="/blog" element={<Blog />} />
