@@ -13,7 +13,7 @@ const About = () => {
                     I have 3 years of professional experience working on projects that span across various domains. I specialize in frontend and backend development, and I'm committed to writing clean, efficient, and scalable code.
                 </p>
                 <p>
-                    Outside of coding, I enjoy fitness, being a Father, making Art, traveling and long list of other activities. My goal is to continue growing as a developer, learn new skills, and contribute to impactful projects.
+                    Outside of coding, I enjoy fitness, being a Father, making Art, traveling and a long list of other activities. My goal is to continue growing as a developer, learn new skills, and contribute to impactful projects.
                 </p>
                 <p>
                     Feel free to explore my projects and blog posts to learn more about my work.
