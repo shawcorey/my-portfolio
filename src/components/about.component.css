@@ -1,8 +1,11 @@
 .about-section {
-    padding: 60px;
-    background-color: #70e7d3;
-    color: #333;
+    
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#feccb1+0,ea5507+51,fb955e+100 */
+background: linear-gradient(to bottom,  #feccb1 0%,#ea5507 51%,#fb955e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
 }
+
+
 
 .container {
     max-width: 1000px;
