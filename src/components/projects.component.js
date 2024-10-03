@@ -13,7 +13,7 @@ const Projects = () => {
                     These experiences have all been rewarding.
                 </p>
                 <p>
-                    
+                
                 </p>
                 <p>
                     
