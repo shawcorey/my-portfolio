@@ -38,7 +38,7 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://github.com/shawcorey?tab=overview&from=2024-10-01&to=2024-10-03"
           target="_blank"
           rel="noopener noreferrer"
         >
