@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Projects from './components/projects.component';
 import Blog from './components/blog.component';
 import Navbar from './components/navbar.component'; // Optional navigation bar
-
+import Footer from './components/footer.component'; // Adjust the path if needed
 
 
 
@@ -48,7 +48,8 @@ function App() {
             {/* Other components */}
         </div>
 
-
+         {/* Footer component */}
+      <Footer />
           
         </a>
       </header>

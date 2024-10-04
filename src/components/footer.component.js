@@ -6,17 +6,17 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <p>© 2024 Your Name. All rights reserved.</p>
+        <p>© 2024 Corey Shaw. All rights reserved.</p>
         <p>
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/shawcorey" target="_blank" rel="noopener noreferrer">
             GitHub
           </a>
           {" | "}
-          <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/corey-shaw" target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>
           {" | "}
-          <a href="mailto:youremail@example.com">
+          <a href="mailto:coreyshaw@coreylshaw.com">
             Contact
           </a>
         </p>
