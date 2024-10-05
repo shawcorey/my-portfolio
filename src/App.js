@@ -44,7 +44,7 @@ function App() {
         >
          <div className="App">
             {/* Other components */}
-            <About />
+            
             {/* Other components */}
         </div>
 
