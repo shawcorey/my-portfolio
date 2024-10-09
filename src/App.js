@@ -36,13 +36,10 @@ function App() {
         <p>
           
         </p>
-        <a
-          className="App-link"
-          href="https://github.com/shawcorey?tab=overview&from=2024-10-01&to=2024-10-03"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-         <div className="App">
+        
+      </header>
+
+      <div className="App">
             {/* Other components */}
             
             {/* Other components */}
@@ -50,9 +47,9 @@ function App() {
 
          {/* Footer component */}
       <Footer />
-          
-        </a>
-      </header>
+
+
+
     </div>
   );
 }
