@@ -1,13 +1,13 @@
 import React from 'react';
 import './about.component.css'; // Optional: Create a CSS file for styling.
-
+import profilePic from '../assets/codeupprofilepic.jpg'; // Import the image
 const About = () => {
-    console.log(process.env.PUBLIC_URL);
+    console.log("What Up Doe");
     return (
         <section className="about-section">
             <div className="container">
             <img 
-              src={process.env.PUBLIC_URL + "/codeupprofilepic.jpg"} 
+              src={profilePic} 
               alt="Profile" 
               className="about-profile-pic" 
         />
