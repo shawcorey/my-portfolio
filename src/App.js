@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/home.component'; // Import the Home component
 import Projects from './components/projects.component';
 import Blog from './components/blog.component';
-import Navbar from './components/navbar.component'; // Optional navigation bar
+import Navigation from './components/navigation.component'; // Optional navigation bar
 import Footer from './components/footer.component'; // Adjust the path if needed
 
 
@@ -17,7 +17,7 @@ function App() {
         <Router>
             <div className="App">
                 {/* Optional: Navigation bar */}
-                <Navbar />
+                <Navigation />
 
                 {/* Define Routes */}
                 <Routes>

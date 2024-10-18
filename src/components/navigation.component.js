@@ -1,28 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
-const Navbar = () => {
+
+const Navigation = () => {
     return (
-        <nav>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/about">About</Link>
-                </li>
-                <li>
-                    <Link to="/projects">Projects</Link>
-                </li>
-                <li>
-                    <Link to="/blog">Blog</Link>
-                </li>
-            </ul>
-        </nav>
+      <Navbar bg="primary" data-bs-theme="dark">
+      <Container>
+        <Navbar.Brand href="/">Corey Shaw</Navbar.Brand>
+        <Nav className="me-auto">
+          <Nav.Link href="/about">About Me</Nav.Link>
+          <Nav.Link href="/projects">Projects</Nav.Link>
+          <Nav.Link href="/blog">Blog</Nav.Link>
+        </Nav>
+      </Container>
+    </Navbar>
     );
 };
 
-export default Navbar;
+export default Navigation;
 
 /*import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';

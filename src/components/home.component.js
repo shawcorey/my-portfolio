@@ -11,8 +11,8 @@ const Home = () => {
         </video>
       </div>
       <div className="home-content">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Explore my projects and get to know more about me!</p>
+        <h1>Welcome to My Portfolio!</h1>
+        <p> </p>
       </div>
     </div>
   );
