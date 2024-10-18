@@ -4,7 +4,7 @@
     padding: 20px 0;
     text-align: center;
     color: white;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
   }

@@ -27,7 +27,7 @@
   
   .home-content {
     position: relative;
-    color: white;
+    color: rgb(15, 52, 173);
     z-index: 1;
     text-align: center;
   }
