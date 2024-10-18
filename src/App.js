@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import About from './components/About'; 
+import About from './components/about.component'; 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import Projects from './components/Projects';
-import Blog from './components/Blog';
-import Navbar from './components/Navbar'; // Optional navigation bar
-
+import Home from './components/home.component'; // Import the Home component
+import Projects from './components/projects.component';
+import Blog from './components/blog.component';
+import Navigation from './components/navigation.component'; // Optional navigation bar
+import Footer from './components/footer.component'; // Adjust the path if needed
 
 
 
@@ -17,11 +17,11 @@ function App() {
         <Router>
             <div className="App">
                 {/* Optional: Navigation bar */}
-                <Navbar />
+                <Navigation />
 
                 {/* Define Routes */}
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<Home />} /> {/* Home component with the video */}
                     <Route path="/about" element={<About />} />
                     <Route path="/projects" element={<Projects />} />
                     <Route path="/blog" element={<Blog />} />
@@ -32,26 +32,24 @@ function App() {
 
 
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+       {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-         <div className="App">
+        
+      </header>
+
+      <div className="App">
             {/* Other components */}
-            <About />
+            
             {/* Other components */}
         </div>
 
+         {/* Footer component */}
+      <Footer />
 
-          Learn React
-        </a>
-      </header>
+
+
     </div>
   );
 }
