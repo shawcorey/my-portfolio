@@ -16,7 +16,7 @@ const Footer = () => {
             LinkedIn
           </a>
           {" | "}
-          <a href="mailto:coreyshaw@coreylshaw.com">
+          <a href="mailto:corey@coreylshaw.com">
             Contact
           </a>
         </p>
