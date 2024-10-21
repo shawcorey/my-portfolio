@@ -4,7 +4,7 @@
     padding: 20px 0;
     text-align: center;
     color: white;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
   }
@@ -29,4 +29,14 @@
     margin: 5px 0;
     font-size: 14px;
   }
+  /* Media query for mobile screens (up to 768px width) */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    padding: 15px;
+    font-size: 14px; /* Smaller font size for mobile */
+  }
   
+  .main-content {
+    padding: 20px; /* Adjust padding to avoid footer overlap */
+  }
+}

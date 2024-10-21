@@ -1,25 +1,31 @@
-import React from 'react';
-import './projects.component.css'; // Optional: Create a CSS file for styling.
+import React, { useState, useEffect } from 'react';
+import './projects.component.css';
 
 const Projects = () => {
+    const [repos, setRepos] = useState([]);
+
+    useEffect(() => {
+        // Fetch GitHub repositories
+        fetch('https://api.github.com/users/shawcorey/repos')
+            .then((response) => response.json())
+            .then((data) => setRepos(data))
+            .catch((error) => console.error('Error fetching repos:', error));
+    }, []);
+
     return (
-        <section className="projects-section">
-            <div className="container">
-                <h2>Projects</h2>
-                <p>
-                    I have worked on various projects spanning from a calender app to a dining app.
-                </p>
-                <p>
-                    These experiences have all been rewarding.
-                </p>
-                <p>
-                
-                </p>
-                <p>
-                    
-                </p>
-            </div>
-        </section>
+        <div className="projects-container">
+            <h2>My Projects</h2>
+            <ul>
+                {repos.map((repo) => (
+                    <li key={repo.id}>
+                        <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                            {repo.name}
+                        </a>
+                        <p>{repo.description}</p>
+                    </li>
+                ))}
+            </ul>
+        </div>
     );
 };
 
