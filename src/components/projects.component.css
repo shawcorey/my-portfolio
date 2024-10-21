@@ -1,0 +1,11 @@
+/* Media query for mobile screens (up to 768px width) */
+@media screen and (max-width: 768px) {
+    .footer-container {
+      padding: 15px;
+      font-size: 14px; /* Smaller font size for mobile */
+    }
+    
+    .main-content {
+      padding: 20px; /* Adjust padding to avoid footer overlap */
+    }
+  }
