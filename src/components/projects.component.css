@@ -9,3 +9,95 @@
       padding: 20px; /* Adjust padding to avoid footer overlap */
     }
   }
+  h2{
+    margin: 2% 25%;
+  }
+/* Adjust the main projects container */
+.projects-container {
+  height: 80vh; /* Limit height to avoid overflow */
+  overflow-y: auto; /* Allow scrolling if content exceeds height */
+  position: relative; /* Ensure the container is positioned relative to other elements */
+  padding: 20px; /* Add padding to prevent overlap with other content */
+  box-sizing: border-box; /* Ensure padding is included in the element's width and height */
+}
+
+/* Remove or modify absolute positioning on the repoList */
+#repoList {
+  width: 100%; /* Ensure it takes full width of the container */
+  margin: 0 auto; /* Center the content horizontally */
+  padding: 0; /* Remove extra padding/margins */
+  position: relative; /* Relative positioning to keep it in the document flow */
+  text-align: center;
+}
+
+/* Optional: Adjust the list styles */
+.rolldown-list {
+  perspective: 500px;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+.rolldown-list li {
+  padding: 1em;
+  margin-bottom: 0.125em;
+  display: block;
+  list-style: none;
+  text-transform: uppercase;
+  visibility: hidden;
+  transform-origin: 50% 0; /* Set transform origin at the top */
+  animation: rolldown 0.7s forwards;
+  transform-style: preserve-3d;
+}
+
+/* Dark background for odd/even items */
+.rolldown-list li:nth-child(2n) {
+  background-color: rgb(0, 123, 255); /* Classic blue */
+  color: white; /* Ensures readability on blue background */
+  a {color:white}
+}
+
+.rolldown-list li:nth-child(2n+1) {
+  background-color: rgb(173, 216, 230); /* Light blue */
+  color: black; /* Darker text for contrast on light background */
+}
+
+
+  
+  
+  
+  #repoList {
+    position: absolute;
+    width: 50%; 
+    left: 50%;
+    margin-left: -25%;
+  }
+  
+  #btnReload {
+    float: right;
+    color: #333;
+    background: #ccc;
+    text-transform: uppercase;
+    border: none;
+    padding: .5em 1em;
+  }
+  
+  #btnReload:hover {
+    background: #ddd;
+  }
+  
+  @keyframes rolldown {
+    0% {
+      visibility: visible;
+      transform: rotateX(180deg); /* Start flipped */
+    }
+    70% {
+      visibility: visible;
+      transform: rotateX(-20deg); /* Slight overshoot for a smooth effect */
+    }
+    100% {
+      visibility: visible;
+      transform: rotateX(0deg); /* End in a flat, unflipped state */
+    }
+  }
+  
