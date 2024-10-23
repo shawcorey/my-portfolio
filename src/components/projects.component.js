@@ -13,9 +13,11 @@ const Projects = () => {
     }, []);
 
     return (
+        <div class="projects-content">
+        <h2>My Projects</h2>
         <div className="projects-container">
-            <h2>My Projects</h2>
-            <ul>
+            
+            <ul class="rolldown-list" id="repoList">
                 {repos.map((repo) => (
                     <li key={repo.id}>
                         <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
@@ -25,6 +27,7 @@ const Projects = () => {
                     </li>
                 ))}
             </ul>
+        </div>
         </div>
     );
 };

@@ -14,36 +14,31 @@ import Footer from './components/footer.component'; // Adjust the path if needed
 function App() {
   return (
     <div className="App">
+      <Navigation />
+      <div class="app-content">
         <Router>
-            <div className="App">
+            
                 {/* Optional: Navigation bar */}
-                <Navigation />
+                
 
                 {/* Define Routes */}
+                
                 <Routes>
                     <Route path="/" element={<Home />} /> {/* Home component with the video */}
                     <Route path="/about" element={<About />} />
                     <Route path="/projects" element={<Projects />} />
                     <Route path="/blog" element={<Blog />} />
                 </Routes>
-            </div>
-        </Router> 
-
-
-
-      <header className="App-header">
-       {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <p>
-          
-        </p>
-        
-      </header>
-
-      <div className="App">
-            {/* Other components */}
+                
             
-            {/* Other components */}
+        </Router> 
         </div>
+      
+
+
+      
+
+      
 
          {/* Footer component */}
       <Footer />

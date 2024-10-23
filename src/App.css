@@ -1,6 +1,39 @@
 /* App.css */
-body {
+
+/* Reset some basic margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Apply Flexbox to the body to make sure the layout works across the full height */
+html, body {
+  height: 100%;
   background: #fff;
   margin: 0;
   height: 100vh;
 }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Ensures that the main content stretches to fill the available space */
+.app-content {
+  flex: 1;
+}
+
+/* Footer stays at the bottom */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
