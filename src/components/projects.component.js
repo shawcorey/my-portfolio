@@ -14,7 +14,7 @@ const Projects = () => {
 
     return (
         <div class="projects-content">
-        <h2>My Projects</h2>
+       <div class="projects-header"> <h2>My Projects</h2></div>
         <div className="projects-container">
             
             <ul class="rolldown-list" id="repoList">

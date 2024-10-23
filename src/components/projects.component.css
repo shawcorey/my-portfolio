@@ -9,7 +9,7 @@
       padding: 20px; /* Adjust padding to avoid footer overlap */
     }
   }
-  h2{
+  .projects-header{
     margin: 2% 25%;
   }
 /* Adjust the main projects container */
