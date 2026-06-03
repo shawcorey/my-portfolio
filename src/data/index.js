@@ -1,8 +1,12 @@
+import armyToEngineering from './posts/army-to-engineering';
+import whyIChoseJava from './posts/why-i-chose-java';
+import websiteUpdate from './posts/website-update';
+
 export const profile = {
   name: 'Corey Shaw',
   headline: 'Front End Engineer · Full Stack Engineer · Java Developer',
   bio: 'Full-stack engineer with 3 years of professional experience building web applications across Java and JavaScript ecosystems. Army veteran (2002–2015) turned developer — I bring discipline, adaptability, and a bias toward shipping to every project.',
-  email: 'shaw.corey@gmail.com',
+  email: 'corey@coreylshaw.com',
   github: 'https://github.com/shawcorey',
   linkedin: 'https://linkedin.com/in/corey-l-shaw',
   instagram: 'https://instagram.com/mr.coreybreeze',
@@ -14,7 +18,7 @@ export const experience = [
   {
     title: 'Java Developer',
     company: 'CGI',
-    period: '2021 – Present',
+    period: '2021 – 2024',
     location: 'Remote',
     bullets: [
       'Develop and maintain enterprise Java applications for federal clients',
@@ -24,18 +28,18 @@ export const experience = [
     tags: ['Java', 'Spring Boot', 'REST APIs', 'Agile'],
   },
   {
-    title: 'Software Developer',
+    title: 'Senior Mortgage Operator',
     company: 'Wells Fargo',
-    period: '2021',
-    location: 'Texas',
+    period: '2012 - 2016',
+    location: 'San Antonio, Texas',
     bullets: [
       'Contributed to internal tooling and web application development',
-      'Worked within a large engineering org on customer-facing features',
+      'Worked within a large engineering org on customer-facing features for customers looking to refinance their mortgages',
     ],
     tags: ['JavaScript', 'React', 'Java'],
   },
   {
-    title: 'Sergeant / Operations',
+    title: 'Combat Engineer / Operations Manager',
     company: 'United States Army',
     period: '2002 – 2015',
     location: 'Various',
@@ -141,42 +145,9 @@ export const projects = [
 ];
 
 export const blogPosts = [
-  {
-    id: 1,
-    title: 'My Journey from the Army to Software Engineering',
-    date: 'March 2024',
-    excerpt: 'Thirteen years of service taught me discipline, leadership, and how to perform under pressure. Here\'s how those skills translated directly into a career in tech — and why I\'d make the same choice again.',
-    body: `Thirteen years in the Army teaches you a lot of things. How to wake up before everyone else. How to lead when you don't have all the answers. How to adapt when the plan falls apart.
-
-What I didn't expect was how directly those skills would carry over into software engineering.
-
-When I started at Codeup in 2021, I was surrounded by people younger than me, many with formal CS backgrounds. I didn't have that. What I had was 13 years of showing up, solving problems under pressure, and learning whatever I needed to learn to get the mission done.
-
-The 22-week bootcamp was intense — 670 hours of Java, Spring Boot, MySQL, JavaScript, and React. There were moments where I felt lost. But the Army taught me that "lost" is temporary and "quit" is a choice. I kept going.
-
-When I got my first role as a Java Developer at CGI, working on federal systems, everything clicked. The discipline, the attention to detail, the ability to communicate across teams — it all transferred.
-
-If you're a veteran thinking about tech: the transition is real work, but the skills you built in service are exactly what engineering teams need. Don't underestimate what you bring to the table.`,
-    readTime: '5 min read',
-    tags: ['Career', 'Veteran', 'Story'],
-  },
-  {
-    id: 2,
-    title: 'Why I Chose Java as My Foundation',
-    date: 'January 2024',
-    excerpt: 'When I started at Codeup, Java felt overwhelming and verbose. Two years later it\'s my strongest language and the backbone of my career. Here\'s what finally clicked.',
-    body: `Java gets a bad reputation for being verbose. When I was learning it at Codeup, I spent the first few weeks wondering why we weren't just doing JavaScript everything.
-
-Then Spring Boot clicked.
-
-When you understand what the framework is doing — dependency injection, inversion of control, the whole container lifecycle — Java stops feeling like ceremony and starts feeling like power. You're not writing boilerplate; you're describing a system.
-
-At CGI, working on large-scale federal applications, Java's verbosity became a feature. Every type is declared. Every contract is explicit. When you come back to code six months later, or when a new team member picks it up, it reads like documentation.
-
-My advice to anyone starting out: don't fight the language. Understand why it was built the way it was. Java has been running the backend of the internet for 30 years for a reason.`,
-    readTime: '4 min read',
-    tags: ['Java', 'Learning', 'Dev'],
-  },
+  websiteUpdate,
+  armyToEngineering,
+  whyIChoseJava,
 ];
 
 export const fitness = {
