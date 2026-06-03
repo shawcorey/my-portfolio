@@ -1,42 +1,81 @@
-/* Footer.css */
 .footer {
-    background-image: linear-gradient(90deg, #3b71db, #61dafb); /* Gradient background */
-    padding: 5px 0;
+  background: var(--bg-sidebar);
+  border-top: 1px solid var(--border);
+  padding: 48px 0 24px;
+  margin-top: auto;
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 40px;
+  align-items: start;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer__name {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--text-heading);
+}
+
+.footer__tagline {
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+.footer__nav,
+.footer__social {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__nav a,
+.footer__social a {
+  font-size: 14px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer__nav a:hover,
+.footer__social a:hover {
+  color: var(--accent);
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+@media (max-width: 640px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer__nav,
+  .footer__social {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: 4px;
     text-align: center;
-    color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: 500;
-  }
-  
-  .footer a:hover {
-    text-decoration: underline;
-  }
-  
-  .footer p {
-    margin: 5px 0;
-    font-size: 14px;
-  }
-  /* Media query for mobile screens (up to 768px width) */
-@media screen and (max-width: 768px) {
-  .footer-container {
-    padding: 15px;
-    font-size: 14px; /* Smaller font size for mobile */
-  }
-  
-  .main-content {
-    padding: 20px; /* Adjust padding to avoid footer overlap */
   }
 }

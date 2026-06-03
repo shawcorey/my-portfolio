@@ -1,60 +1,74 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { profile } from '../data/index';
+import './navigation.component.css';
 
+const navLinks = [
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
+  { label: 'Projects', path: '/projects' },
+  { label: 'Blog', path: '/blog' },
+  { label: 'Fitness', path: '/fitness' },
+  { label: 'Gaming', path: '/gaming' },
+];
 
 const Navigation = () => {
-    return (
-      <Navbar bg="primary" data-bs-theme="dark">
-      <Container>
-        <Navbar.Brand href="/">Corey Shaw</Navbar.Brand>
-        <Nav className="me-auto">
-          <Nav.Link href="/about">About Me</Nav.Link>
-          <Nav.Link href="/projects">Projects</Nav.Link>
-          <Nav.Link href="/blog">Blog</Nav.Link>
-        </Nav>
-      </Container>
-    </Navbar>
-    );
+  const location = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
+
+  const isActive = (path) => {
+    if (path === '/') return location.pathname === '/';
+    return location.pathname.startsWith(path);
+  };
+
+  return (
+    <nav className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
+      <div className="nav__inner container">
+        <Link to="/" className="nav__brand">
+          <span className="nav__brand-name">Corey Shaw</span>
+          {profile.available && (
+            <span className="nav__available" title="Available for work">
+              <span className="nav__available-dot" />
+            </span>
+          )}
+        </Link>
+
+        <ul className={`nav__links${menuOpen ? ' nav__links--open' : ''}`}>
+          {navLinks.map(({ label, path }) => (
+            <li key={path}>
+              <Link
+                to={path}
+                className={`nav__link${isActive(path) ? ' nav__link--active' : ''}`}
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <button
+          className={`nav__hamburger${menuOpen ? ' nav__hamburger--open' : ''}`}
+          onClick={() => setMenuOpen((o) => !o)}
+          aria-label="Toggle menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
+    </nav>
+  );
 };
 
 export default Navigation;
-
-/*import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-
-function BasicExample() {
-  return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#about">About</Nav.Link>
-            <Nav.Link href="#projects">Projects</Nav.Link>
-            <Nav.Link href="#blog">Blog</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  );
-}
-
-export default BasicExample; */

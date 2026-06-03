@@ -1,35 +1,68 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { projects } from '../data/index';
 import './projects.component.css';
 
+const categories = ['All', 'Java', 'JavaScript', 'Angular', 'Other'];
+
 const Projects = () => {
-    const [repos, setRepos] = useState([]);
+  const [active, setActive] = useState('All');
 
-    useEffect(() => {
-        // Fetch GitHub repositories
-        fetch('https://api.github.com/users/shawcorey/repos')
-            .then((response) => response.json())
-            .then((data) => setRepos(data))
-            .catch((error) => console.error('Error fetching repos:', error));
-    }, []);
+  const filtered = active === 'All'
+    ? projects
+    : projects.filter((p) => p.category === active);
 
-    return (
-        <div class="projects-content">
-       <div class="projects-header"> <h2>My Projects</h2></div>
-        <div className="projects-container">
-            
-            <ul class="rolldown-list" id="repoList">
-                {repos.map((repo) => (
-                    <li key={repo.id}>
-                        <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                            {repo.name}
-                        </a>
-                        <p>{repo.description}</p>
-                    </li>
+  return (
+    <div className="projects" style={{ paddingTop: 'var(--nav-h)' }}>
+      <div className="container section">
+        <span className="section-label">Work</span>
+        <h1 className="section-title">Projects</h1>
+
+        {/* Category filter */}
+        <div className="projects__filters">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              className={`projects__filter-btn${active === cat ? ' projects__filter-btn--active' : ''}`}
+              onClick={() => setActive(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Grid */}
+        <div className="projects__grid">
+          {filtered.map((p) => (
+            <div key={p.name} className="project-card">
+              <div className="project-card__top">
+                <span className="project-card__icon">{p.icon}</span>
+                {p.featured && <span className="tag tag-accent">Featured</span>}
+              </div>
+              <h2 className="project-card__name">{p.name}</h2>
+              <p className="project-card__desc">{p.description}</p>
+              <div className="project-card__tags">
+                {p.tags.map((t) => (
+                  <span key={t} className="tag">{t}</span>
                 ))}
-            </ul>
+              </div>
+              <a
+                href={p.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-card__link btn btn-outline"
+              >
+                View on GitHub
+              </a>
+            </div>
+          ))}
         </div>
-        </div>
-    );
+
+        {filtered.length === 0 && (
+          <p className="projects__empty">No projects in this category yet.</p>
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default Projects;

@@ -1,38 +1,120 @@
-/* App.css */
-
-/* Reset some basic margin and padding */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --bg:           #1E1B16;
+  --bg-card:      #252018;
+  --bg-sidebar:   #1A1713;
+  --bg-elevated:  #2A2720;
+  --accent:       #1D9E75;
+  --accent-hover: #22B585;
+  --accent-dim:   #0F7B63;
+  --accent-pale:  rgba(29, 158, 117, 0.12);
+  --text-heading: #F0E8DC;
+  --text-body:    #C8BFB3;
+  --text-muted:   #8C8278;
+  --text-faint:   #5C5550;
+  --border:       #2E2922;
+  --border-light: #3A342C;
+  --serif:        Georgia, 'Times New Roman', serif;
+  --sans:         -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --radius:       8px;
+  --radius-lg:    16px;
+  --shadow:       0 4px 24px rgba(0,0,0,0.4);
+  --shadow-sm:    0 2px 8px rgba(0,0,0,0.3);
+  --nav-h:        64px;
 }
 
-/* Apply Flexbox to the body to make sure the layout works across the full height */
-html, body {
-  height: 100%;
-  background: #fff;
-  margin: 0;
-  height: 100vh;
-}
-
-.App {
+.app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Ensures that the main content stretches to fill the available space */
-.app-content {
+.app-main {
   flex: 1;
 }
 
-/* Footer stays at the bottom */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #333;
-  color: white;
-  bottom: 0;
-  width: 100%;
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
+.section {
+  padding: 80px 0;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: normal;
+  color: var(--text-heading);
+  line-height: 1.2;
+  margin-bottom: 48px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border: 1.5px solid var(--accent);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-heading);
+  border: 1.5px solid var(--border-light);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.tag-accent {
+  background: var(--accent-pale);
+  color: var(--accent);
+  border-color: rgba(29, 158, 117, 0.3);
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 48px 0;
+}

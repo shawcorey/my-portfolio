@@ -1,17 +1,98 @@
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: rgb(15, 52, 173);
+.blog__posts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* Media query for mobile screens (up to 768px width) */
-@media screen and (max-width: 768px) {
-    .footer-container {
-      padding: 15px;
-      font-size: 14px; /* Smaller font size for mobile */
-    }
-    
-    .main-content {
-      padding: 20px; /* Adjust padding to avoid footer overlap */
-    }
-  }
+.blog-post {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color 0.2s;
+  overflow: hidden;
+}
+
+.blog-post--open,
+.blog-post:hover {
+  border-left-color: var(--accent);
+}
+
+.blog-post__header {
+  padding: 28px 32px;
+  cursor: pointer;
+}
+
+.blog-post__meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.blog-post__date {
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+.blog-post__read-time {
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+.blog-post__title {
+  font-family: var(--serif);
+  font-size: clamp(18px, 2.5vw, 24px);
+  color: var(--text-heading);
+  font-weight: normal;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.blog-post__excerpt {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.blog-post__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.blog-post__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.blog-post__toggle {
+  font-size: 13px;
+  color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.blog-post__body {
+  padding: 0 32px 32px;
+  border-top: 1px solid var(--border);
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 24px;
+}
+
+.blog-post__body p {
+  font-size: 15px;
+  color: var(--text-body);
+  line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+  .blog-post__header { padding: 20px; }
+  .blog-post__body { padding: 16px 20px 24px; }
+  .blog-post__footer { flex-direction: column; align-items: flex-start; }
+}

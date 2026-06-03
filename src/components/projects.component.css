@@ -1,103 +1,93 @@
-/* Media query for mobile screens (up to 768px width) */
-@media screen and (max-width: 768px) {
-    .footer-container {
-      padding: 15px;
-      font-size: 14px; /* Smaller font size for mobile */
-    }
-    
-    .main-content {
-      padding: 20px; /* Adjust padding to avoid footer overlap */
-    }
-  }
-  .projects-header{
-    margin: 2% 25%;
-  }
-/* Adjust the main projects container */
-.projects-container {
-  height: 80vh; /* Limit height to avoid overflow */
-  overflow-y: auto; /* Allow scrolling if content exceeds height */
-  position: relative; /* Ensure the container is positioned relative to other elements */
-  padding: 20px; /* Add padding to prevent overlap with other content */
-  box-sizing: border-box; /* Ensure padding is included in the element's width and height */
+.projects__filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
 }
 
-/* Remove or modify absolute positioning on the repoList */
-#repoList {
-  width: 100%; /* Ensure it takes full width of the container */
-  margin: 0 auto; /* Center the content horizontally */
-  padding: 0; /* Remove extra padding/margins */
-  position: relative; /* Relative positioning to keep it in the document flow */
-  text-align: center;
+.projects__filter-btn {
+  padding: 7px 18px;
+  border-radius: 24px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-/* Optional: Adjust the list styles */
-.rolldown-list {
-  perspective: 500px;
-  text-align: left;
-  padding: 0;
-  margin: 0;
+.projects__filter-btn:hover {
+  border-color: var(--accent-dim);
+  color: var(--text-body);
 }
 
-.rolldown-list li {
-  padding: 1em;
-  margin-bottom: 0.125em;
-  display: block;
-  list-style: none;
-  text-transform: uppercase;
-  visibility: hidden;
-  transform-origin: 50% 0; /* Set transform origin at the top */
-  animation: rolldown 0.7s forwards;
-  transform-style: preserve-3d;
+.projects__filter-btn--active {
+  background: var(--accent-pale);
+  color: var(--accent);
+  border-color: rgba(29, 158, 117, 0.4);
 }
 
-/* Dark background for odd/even items */
-.rolldown-list li:nth-child(2n) {
-  background-color: rgb(0, 123, 255); /* Classic blue */
-  color: white; /* Ensures readability on blue background */
-  a {color:white}
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
 }
 
-.rolldown-list li:nth-child(2n+1) {
-  background-color: rgb(173, 216, 230); /* Light blue */
-  color: black; /* Darker text for contrast on light background */
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color 0.2s, transform 0.2s;
 }
 
+.project-card:hover {
+  border-color: var(--accent-dim);
+  transform: translateY(-2px);
+}
 
-  
-  
-  
-  #repoList {
-    position: absolute;
-    width: 50%; 
-    left: 50%;
-    margin-left: -25%;
-  }
-  
-  #btnReload {
-    float: right;
-    color: #333;
-    background: #ccc;
-    text-transform: uppercase;
-    border: none;
-    padding: .5em 1em;
-  }
-  
-  #btnReload:hover {
-    background: #ddd;
-  }
-  
-  @keyframes rolldown {
-    0% {
-      visibility: visible;
-      transform: rotateX(180deg); /* Start flipped */
-    }
-    70% {
-      visibility: visible;
-      transform: rotateX(-20deg); /* Slight overshoot for a smooth effect */
-    }
-    100% {
-      visibility: visible;
-      transform: rotateX(0deg); /* End in a flat, unflipped state */
-    }
-  }
-  
+.project-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.project-card__icon {
+  font-size: 32px;
+}
+
+.project-card__name {
+  font-family: var(--serif);
+  font-size: 20px;
+  color: var(--text-heading);
+  font-weight: normal;
+}
+
+.project-card__desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.project-card__link {
+  align-self: flex-start;
+  font-size: 13px;
+  padding: 8px 16px;
+}
+
+.projects__empty {
+  color: var(--text-faint);
+  font-size: 15px;
+  padding: 40px 0;
+}

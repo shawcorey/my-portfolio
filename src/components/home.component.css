@@ -1,52 +1,281 @@
-/* Home.css */
+/* Hero */
+.home-hero {
+  padding: 80px 0 60px;
+  border-bottom: 1px solid var(--border);
+}
 
-.home-container {
-    position: relative;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.home-hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 60px;
+  align-items: center;
+}
+
+.home-hero__title {
+  font-family: var(--serif);
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: normal;
+  color: var(--text-heading);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.home-hero__title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.home-hero__subtitle {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  letter-spacing: 0.01em;
+}
+
+.home-hero__bio {
+  font-size: 16px;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 520px;
+}
+
+.home-hero__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Floating stats card */
+.home-hero__card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.home-hero__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.home-hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.home-hero__stat-value {
+  font-family: var(--serif);
+  font-size: 32px;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.home-hero__stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.home-hero__badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.home-hero__badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+
+/* Skills strip */
+.home-skills {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.home-skills__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* Featured projects */
+.home-projects__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.home-project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.home-project-card:hover {
+  border-color: var(--accent-dim);
+  transform: translateY(-2px);
+}
+
+.home-project-card__icon {
+  font-size: 28px;
+}
+
+.home-project-card__name {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--text-heading);
+  font-weight: normal;
+}
+
+.home-project-card__desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.home-project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.home-project-card__link {
+  font-size: 13px;
+  color: var(--accent);
+  text-decoration: none;
+  margin-top: 4px;
+  transition: color 0.2s;
+}
+
+.home-project-card__link:hover {
+  color: var(--accent-hover);
+}
+
+.home-projects__cta {
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* Experience teaser */
+.home-exp__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.home-exp__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.home-exp__left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.home-exp__company {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--text-heading);
+}
+
+.home-exp__period {
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+.home-exp__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.home-exp__title {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* CTA banner */
+.home-cta {
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--border);
+  padding: 60px 0;
+}
+
+.home-cta__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.home-cta__title {
+  font-family: var(--serif);
+  font-size: clamp(22px, 3vw, 32px);
+  color: var(--text-heading);
+  font-weight: normal;
+  margin-bottom: 8px;
+}
+
+.home-cta__sub {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .home-hero__inner {
+    grid-template-columns: 1fr;
   }
-  
-  .video-container {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
+
+  .home-hero__card {
+    max-width: 400px;
   }
-  
-  .home-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the video covers the whole container */
+
+  .home-projects__grid {
+    grid-template-columns: 1fr 1fr;
   }
-  
-  .home-content {
-    position: relative;
-    color: rgb(15, 52, 173);
-    z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .home-projects__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-cta__inner {
+    flex-direction: column;
     text-align: center;
   }
-  
-  h1 {
-    font-size: 3rem;
-  }
-  
-  p {
-    font-size: 1.2rem;
-  }
-  /* Media query for mobile screens (up to 768px width) */
-@media screen and (max-width: 768px) {
-  .footer-container {
-    padding: 15px;
-    font-size: 14px; /* Smaller font size for mobile */
-  }
-  
-  .main-content {
-    padding: 20px; /* Adjust padding to avoid footer overlap */
+
+  .home-exp__item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
 }

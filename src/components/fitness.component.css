@@ -1,0 +1,321 @@
+.fit__intro {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  max-width: 540px;
+}
+
+/* Stats overview */
+.fit__stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 56px;
+}
+
+.fit__stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fit__stat-value {
+  font-family: var(--serif);
+  font-size: 36px;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.fit__stat-label {
+  font-size: 12px;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Two-column layout */
+.fit__two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.fit__section {
+  margin-bottom: 44px;
+}
+
+.fit__section:last-child {
+  margin-bottom: 0;
+}
+
+.fit__heading {
+  font-family: var(--serif);
+  font-size: 20px;
+  color: var(--text-heading);
+  font-weight: normal;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* PR table */
+.fit__pr-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.fit__pr-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 16px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.fit__pr-row--header {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  font-weight: 600;
+  padding-bottom: 8px;
+}
+
+.fit__pr-exercise {
+  font-size: 14px;
+  color: var(--text-body);
+}
+
+.fit__pr-weight {
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.fit__pr-weight small {
+  font-size: 11px;
+  color: var(--text-faint);
+  font-weight: normal;
+}
+
+.fit__pr-date {
+  font-size: 12px;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+/* Goals */
+.fit__goals {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fit__goal {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fit__goal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fit__goal-name {
+  font-size: 14px;
+  color: var(--text-body);
+}
+
+.fit__goal-values {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.fit__goal-bar-bg {
+  height: 6px;
+  background: var(--bg-elevated);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.fit__goal-bar {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+
+.fit__goal-pct {
+  font-size: 12px;
+  color: var(--text-faint);
+  align-self: flex-end;
+}
+
+/* Muscle groups */
+.fit__muscles {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fit__muscle {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fit__muscle-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fit__muscle-name {
+  font-size: 14px;
+  color: var(--text-body);
+}
+
+.fit__muscle-pct {
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.fit__muscle-bar-bg {
+  height: 6px;
+  background: var(--bg-elevated);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.fit__muscle-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-dim), var(--accent));
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+
+/* Monthly chart */
+.fit__chart-note {
+  font-size: 13px;
+  color: var(--text-faint);
+  margin-bottom: 16px;
+}
+
+.fit__chart {
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+  height: 120px;
+}
+
+.fit__bar-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  height: 100%;
+}
+
+.fit__bar-col {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2px;
+}
+
+.fit__bar-count {
+  font-size: 10px;
+  color: var(--text-faint);
+}
+
+.fit__bar {
+  width: 100%;
+  background: var(--accent);
+  border-radius: 2px 2px 0 0;
+  min-height: 4px;
+  transition: height 0.6s ease;
+}
+
+.fit__bar-label {
+  font-size: 9px;
+  color: var(--text-faint);
+  text-align: center;
+}
+
+/* Instagram card */
+.fit__ig-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+
+.fit__ig-card:hover {
+  border-color: var(--accent);
+}
+
+.fit__ig-avatar {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.fit__ig-handle {
+  display: block;
+  font-size: 15px;
+  color: var(--text-heading);
+  font-weight: 500;
+}
+
+.fit__ig-sub {
+  display: block;
+  font-size: 13px;
+  color: var(--text-faint);
+  margin-top: 2px;
+}
+
+.fit__ig-arrow {
+  margin-left: auto;
+  color: var(--accent);
+  font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .fit__stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fit__two-col {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .fit__stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fit__chart {
+    height: 90px;
+  }
+}

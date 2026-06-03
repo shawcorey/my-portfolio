@@ -1,41 +1,319 @@
-.about-section {
-    
+.about__layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 60px;
+  align-items: start;
 }
 
-.about-profile-pic {
-    width: 200px;
-    height: 200px;
+/* Sidebar */
+.about__sidebar {
+  position: sticky;
+  top: calc(var(--nav-h) + 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about__photo-wrap {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.about__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__sidebar-heading {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.about__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.about__contact-link,
+.about__contact-item {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.about__contact-link:hover {
+  color: var(--accent);
+}
+
+.about__social {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.about__social-link {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.about__social-link:hover {
+  color: var(--accent);
+}
+
+.about__currently {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.about__currently-text {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.about__available {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+.about__available-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+
+/* Main content */
+.about__section {
+  margin-bottom: 56px;
+}
+
+.about__section:last-child {
+  margin-bottom: 0;
+}
+
+.about__heading {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--text-heading);
+  font-weight: normal;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.about__bio {
+  font-size: 15px;
+  color: var(--text-body);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+/* Timeline */
+.about__timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-left: 24px;
+  border-left: 2px solid var(--border);
+}
+
+.about__timeline-item {
+  position: relative;
+  padding-bottom: 36px;
+}
+
+.about__timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.about__timeline-dot {
+  position: absolute;
+  left: -31px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+}
+
+.about__timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about__timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.about__timeline-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.about__timeline-company {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.about__timeline-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  font-size: 13px;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+.about__timeline-bullets {
+  padding-left: 16px;
+  list-style: disc;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.about__timeline-bullets li {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.about__timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Education */
+.about__edu-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.about__edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about__edu-school {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--text-heading);
+}
+
+.about__edu-period {
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+.about__edu-degree {
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.about__edu-detail {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
+/* Skills */
+.about__skills {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about__skill-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about__skill-category {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+  font-weight: 600;
+}
+
+.about__skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Interests */
+.about__interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.about__interest-item {
+  padding: 8px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  font-size: 14px;
+  color: var(--text-body);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .about__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .about__sidebar {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .about__photo-wrap {
+    width: 120px;
+    height: 120px;
+    aspect-ratio: auto;
     border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
+    flex-shrink: 0;
   }
-
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
 }
-
-h2 {
-    text-align: left;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: rgb(15, 52, 173);
-}
-
-p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-/* Media query for mobile screens (up to 768px width) */
-@media screen and (max-width: 768px) {
-    .footer-container {
-      padding: 15px;
-      font-size: 14px; /* Smaller font size for mobile */
-    }
-    
-    .main-content {
-      padding: 20px; /* Adjust padding to avoid footer overlap */
-    }
-  }
