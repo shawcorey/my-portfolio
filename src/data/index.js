@@ -8,7 +8,7 @@ export const profile = {
   bio: 'Full-stack engineer with 3 years of professional experience building web applications across Java and JavaScript ecosystems. Army veteran (2002–2015) turned developer — I bring discipline, adaptability, and a bias toward shipping to every project.',
   email: 'corey@coreylshaw.com',
   github: 'https://github.com/shawcorey',
-  linkedin: 'https://linkedin.com/in/corey-l-shaw',
+  linkedin: 'https://linkedin.com/in/corey-shaw',
   instagram: 'https://instagram.com/mr.coreybreeze',
   location: 'Texas, USA',
   available: true,
