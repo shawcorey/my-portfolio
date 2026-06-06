@@ -1,0 +1,4 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 32 8 L 48 16 L 48 32 Q 48 48 32 56 Q 16 48 16 32 L 16 16 Z" fill="#2A2720" stroke="#00C2FF" stroke-width="2"/>
+  <text x="32" y="38" font-family="Georgia, serif" font-size="24" font-weight="700" text-anchor="middle" fill="#00C2FF">CS</text>
+</svg>
