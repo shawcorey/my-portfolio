@@ -1,6 +1,7 @@
 import armyToEngineering from './posts/army-to-engineering';
 import whyIChoseJava from './posts/why-i-chose-java';
 import websiteUpdate from './posts/website-update';
+import evo2025SF6Recap from './posts/evo-2025-sf6-recap';
 
 export const profile = {
   name: 'Corey Shaw',
@@ -148,6 +149,10 @@ export const blogPosts = [
   websiteUpdate,
   armyToEngineering,
   whyIChoseJava,
+];
+
+export const gamingPosts = [
+  evo2025SF6Recap,
 ];
 
 export const fitness = {

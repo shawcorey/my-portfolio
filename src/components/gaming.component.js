@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { gaming } from '../data/index';
+import { gaming, gamingPosts } from '../data/index';
 import './gaming.component.css';
 
 const FILTERS = ['All', 'SF6', 'SFV', 'USF4', 'CotW'];
@@ -9,6 +9,9 @@ const typeLabel = { EVO: 'EVO', Local: 'Local', Online: 'Online' };
 
 const Gaming = () => {
   const [filter, setFilter] = useState('All');
+  const [openBlogId, setOpenBlogId] = useState(null);
+
+  const toggleBlog = (id) => setOpenBlogId(openBlogId === id ? null : id);
 
   const filtered = filter === 'All'
     ? gaming.tournaments
@@ -140,6 +143,52 @@ const Gaming = () => {
             <a href="https://start.gg/user/c6881af5" target="_blank" rel="noopener noreferrer" className="g-link">
               start.gg/user/c6881af5
             </a>
+          </p>
+        </div>
+      </section>
+
+      {/* Gaming Journal / Blog */}
+      <section className="g-section">
+        <div className="g-container">
+          <span className="g-label">Competitive</span>
+          <h2 className="g-section-title">Gaming Journal</h2>
+
+          <div className="g-blog-posts">
+            {gamingPosts.map((post) => (
+              <article key={post.id} className={`g-blog-post${openBlogId === post.id ? ' g-blog-post--open' : ''}`}>
+                <div className="g-blog-post__header" onClick={() => toggleBlog(post.id)} role="button" tabIndex={0} onKeyPress={(e) => e.key === 'Enter' && toggleBlog(post.id)}>
+                  <div className="g-blog-post__meta">
+                    <span className="g-blog-post__date">{post.date}</span>
+                    <span className="g-blog-post__read-time">{post.readTime}</span>
+                  </div>
+                  <h3 className="g-blog-post__title">{post.title}</h3>
+                  <p className="g-blog-post__excerpt">{post.excerpt}</p>
+                  <div className="g-blog-post__footer">
+                    <div className="g-blog-post__tags">
+                      {post.tags.map((t) => (
+                        <span key={t} className="g-blog-tag">{t}</span>
+                      ))}
+                    </div>
+                    <span className="g-blog-post__toggle">
+                      {openBlogId === post.id ? 'Collapse ↑' : 'Read more ↓'}
+                    </span>
+                  </div>
+                </div>
+
+                {openBlogId === post.id && (
+                  <div className="g-blog-post__body">
+                    {post.body.split('\n\n').map((para, i) => (
+                      <p key={i}>{para}</p>
+                    ))}
+                  </div>
+                )}
+              </article>
+            ))}
+          </div>
+
+          <p className="g-blog-note">
+            These posts live in the Corey_Breeze competitive journal. Topics cover tournament analysis,
+            character guides, competitive strategy, and lessons from the FGC.
           </p>
         </div>
       </section>

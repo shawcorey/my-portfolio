@@ -462,6 +462,156 @@
 
 .g-footer__back:hover { color: var(--g-accent); }
 
+/* ============= Gaming Blog Section ============= */
+
+.g-blog-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.g-blog-post {
+  border: 1px solid #222;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.g-blog-post:hover {
+  border-color: #00C2FF;
+  box-shadow: 0 0 20px rgba(0, 194, 255, 0.1);
+}
+
+.g-blog-post--open {
+  border-color: #00C2FF;
+  box-shadow: 0 0 20px rgba(0, 194, 255, 0.15);
+  background: rgba(0, 194, 255, 0.02);
+}
+
+.g-blog-post__header {
+  padding: 32px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s ease;
+}
+
+.g-blog-post__header:hover {
+  background: rgba(0, 194, 255, 0.03);
+}
+
+.g-blog-post__meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.g-blog-post__date {
+  font-size: 13px;
+  color: #888;
+  font-weight: 500;
+}
+
+.g-blog-post__read-time {
+  font-size: 13px;
+  color: #666;
+  background: rgba(0, 194, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 3px;
+}
+
+.g-blog-post__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #fff;
+  font-family: Georgia, serif;
+  letter-spacing: -0.5px;
+}
+
+.g-blog-post__excerpt {
+  font-size: 15px;
+  color: #B0AEAA;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.g-blog-post__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.g-blog-post__tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.g-blog-tag {
+  font-size: 12px;
+  padding: 6px 12px;
+  background: rgba(0, 194, 255, 0.15);
+  color: #00C2FF;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 194, 255, 0.3);
+  font-weight: 500;
+}
+
+.g-blog-post__toggle {
+  font-size: 13px;
+  color: #00C2FF;
+  font-weight: 600;
+  transition: letter-spacing 0.2s ease;
+}
+
+.g-blog-post:hover .g-blog-post__toggle {
+  letter-spacing: 1px;
+}
+
+.g-blog-post__body {
+  padding: 0 32px 32px 32px;
+  border-top: 1px solid rgba(0, 194, 255, 0.1);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 2000px;
+  }
+}
+
+.g-blog-post__body p {
+  margin-bottom: 20px;
+  color: #B0AEAA;
+  line-height: 1.8;
+}
+
+.g-blog-post__body p:last-child {
+  margin-bottom: 0;
+}
+
+.g-blog-post__body strong {
+  color: #00C2FF;
+  font-weight: 600;
+}
+
+.g-blog-note {
+  font-size: 14px;
+  color: #888;
+  padding: 24px;
+  background: rgba(0, 194, 255, 0.05);
+  border-left: 3px solid #00C2FF;
+  border-radius: 2px;
+}
+
 /* Responsive */
 @media (max-width: 860px) {
   .g-hero__stats { grid-template-columns: repeat(2, 1fr); }
@@ -486,4 +636,9 @@
   }
 
   .g-table-game { display: none; }
+
+  .g-blog-post__header { padding: 20px; }
+  .g-blog-post__title { font-size: 18px; }
+  .g-blog-post__excerpt { font-size: 14px; }
+  .g-blog-post__footer { flex-direction: column; align-items: flex-start; }
 }
